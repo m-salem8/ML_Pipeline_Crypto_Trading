@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "2.2",
+  "description": "Run application.py",
+  "parameters": {
+    "ApplicationPath": {
+      "type": "String",
+      "description": "The path to the application.py file",
+      "default": "/home/ubuntu/app/application.py"
+    }
+  },
+  "mainSteps": [
+    {
+      "action": "aws:runShellScript",
+      "name": "runApplication",
+      "inputs": {
+        "runCommand": [
+          "python3 {{ApplicationPath}}"
+        ]
+      }
+    }
+  ]
+}
